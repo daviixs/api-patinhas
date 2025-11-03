@@ -1,0 +1,11 @@
+POST http://localhost:3000/animal
+Content-Type: application/json
+
+{
+    "nome": "Rex",
+    "idade": 4,
+    "tipo": "Cachorro",
+    "sexo": "Macho",
+    "data_resgate": "2025-11-03T00:00:00.000Z",
+    "canil": "Canil 1"
+}
