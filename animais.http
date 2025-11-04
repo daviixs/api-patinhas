@@ -1,3 +1,4 @@
+#### cadastro de animal
 POST http://localhost:3000/animal
 Content-Type: application/json
 
@@ -9,3 +10,24 @@ Content-Type: application/json
     "data_resgate": "2025-11-03T00:00:00.000Z",
     "canil": "Canil 1"
 }
+
+
+#### listagem de animais
+GET http://localhost:3000/animal
+
+
+#### atualização de animal
+PUT http://localhost:3000/animal/1
+Content-Type: application/json
+
+{
+    "nome": "Rex",
+    "idade": 5,
+    "tipo": "Cachorro",
+    "sexo": "Macho",
+    "data_resgate": "2025-11-06T00:00:00.000Z",
+    "canil": "Canil 1"
+}
+
+#### exclusão de animal
+DELETE http://localhost:3000/animal/1
