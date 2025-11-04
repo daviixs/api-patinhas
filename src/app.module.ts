@@ -5,10 +5,12 @@ import { CadastrarAnimalService } from './cadastrar_animal/cadastrar_animal.serv
 import { AnimalController } from './animal/animal.controller';
 import { AnimalModule } from './animal/animal.module';
 import { PrismaService } from './database/prisma.service';
+import { AdotanteController } from './adotante/adotante.controller';
+import { AdotanteService } from './adotante/adotante.service';
 
 @Module({
   imports: [AnimalModule],
-  controllers: [AppController, AnimalController],
-  providers: [AppService, CadastrarAnimalService, PrismaService],
+  controllers: [AppController, AnimalController, AdotanteController],
+  providers: [AppService, CadastrarAnimalService, PrismaService, AdotanteService],
 })
 export class AppModule {}
