@@ -1,0 +1,39 @@
+### Criar um novo voluntário
+POST http://localhost:3000/voluntario
+Content-Type: application/json
+
+{
+  "nome": "Carlos Pereira",
+  "telefone": "(11) 97777-5555",
+  "senha": "minhaSenhaSegura123",
+  "usuario": "carlos.pereira"
+}
+
+###
+
+### Buscar todos os voluntários
+GET http://localhost:3000/voluntario
+
+###
+
+### Buscar um voluntário específico por ID
+GET http://localhost:3000/voluntario/1
+
+###
+
+### Atualizar um voluntário existente
+PUT http://localhost:3000/voluntario/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Carlos Pereira de Souza",
+  "telefone": "(11) 98888-9999",
+  "senha": "novaSenhaSegura456",
+  "usuario": "carlos.souza"
+}
+
+###
+
+### Deletar um voluntário
+DELETE http://localhost:3000/voluntario/1

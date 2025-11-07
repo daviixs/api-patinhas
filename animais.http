@@ -3,12 +3,12 @@ POST http://localhost:3000/animal
 Content-Type: application/json
 
 {
-    "nome": "Rex",
+    "nome": "Gustavo Henrique Andrade",
     "idade": 4,
-    "tipo": "Cachorro",
+    "tipo": "Macaco",
     "sexo": "Macho",
     "data_resgate": "2025-11-03T00:00:00.000Z",
-    "canil": "Canil 1"
+    "canil": "Selva Amazônica"
 }
 
 #### listagem de animais
