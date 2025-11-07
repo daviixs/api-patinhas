@@ -5,34 +5,39 @@ import { AnimalDto } from 'src/dto/animal.dto';
 @Injectable()
 export class CadastrarAnimalService {
     constructor(private prisma: PrismaService) {}
+    
     async asynccreate(data: AnimalDto) {
-        const animal = await (this.prisma as any).animal.create({
-            data,
+        const { id, ...dataWithoutId } = data;
+        const animal = await this.prisma.animal.create({
+            data: dataWithoutId,
         });
-        return animal
+        return animal;
     }
 
     async findAll() {
-        return (this.prisma as any).animal.findMany();
+        return this.prisma.animal.findMany();
     }
 
     async update(id: number, data: AnimalDto) {
-        const animal = await (this.prisma as any).animal.findUnique({
+        const animal = await this.prisma.animal.findUnique({
             where: { id },
         });
 
         if (!animal) {
             throw new Error('Animal não encontrado');
         }
-        await (this.prisma as any).animal.update({
+        
+        const { id: _, ...dataWithoutId } = data;
+        await this.prisma.animal.update({
             where: { id },
-            data,
+            data: dataWithoutId,
         });
-        return (this.prisma as any).animal.findUnique({ where: { id } });
+        
+        return this.prisma.animal.findUnique({ where: { id } });
     }
 
     async delete(id: number) {
-        const animal = await (this.prisma as any).animal.findUnique({
+        const animal = await this.prisma.animal.findUnique({
             where: { id },
         });
 
@@ -40,7 +45,7 @@ export class CadastrarAnimalService {
             throw new Error('Animal não encontrado');
         }
 
-        return (this.prisma as any).animal.delete({
+        return this.prisma.animal.delete({
             where: { id },
         });
     }
