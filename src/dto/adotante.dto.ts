@@ -1,9 +1,8 @@
 export type AdotanteDto = {
-    id?:     number;
-    nome:    string;
-    endereco: String;
-    telefone: String;
-    cep:      String;
-    email:    String; 
+    id?:      number;
+    nome:     string;
+    endereco?: string;
+    telefone?: string;
+    cep?:     string;
+    email:    string; 
 }
-

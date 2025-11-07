@@ -1,0 +1,35 @@
+### Criar um novo adotante
+POST http://localhost:3000/adotante
+Content-Type: application/json
+
+{
+  "nome": "Maria da Silva",
+  "endereco": "Rua das Acácias, 123 - São Paulo/SP",
+  "telefone": "(11) 98888-7777",
+  "cep": "04567-890",
+  "email": "maria.silva@example.com"
+}
+
+
+### Buscar todos os adotantes
+GET http://localhost:3000/adotante
+
+###
+
+### Atualizar um adotante existente
+PUT http://localhost:3000/adotante/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Maria da Silva Oliveira",
+  "endereco": "Av. Paulista, 1500 - São Paulo/SP",
+  "telefone": "(11) 97777-6666",
+  "cep": "01310-100",
+  "email": "maria.oliveira@example.com"
+}
+
+###
+
+### Deletar um adotante
+DELETE http://localhost:3000/adotante/1
