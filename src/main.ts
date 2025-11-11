@@ -5,6 +5,17 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  const corsOrigins = process.env.WEB_APP_URL
+    ? process.env.WEB_APP_URL.split(',').map((origin) => origin.trim()).filter(Boolean)
+    : ['http://localhost:5173'];
+
+  app.enableCors({
+    origin: corsOrigins,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  });
+
   // Configuração do Swagger
   const config = new DocumentBuilder()
     .setTitle('API Só Patinhas de Rua')
